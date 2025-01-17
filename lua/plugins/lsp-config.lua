@@ -12,7 +12,7 @@ return {
         ensure_installed = {
           "lua_ls",        -- Lua
           "pyright",       -- Python
-          -- "tsserver",      -- JavaScript/TypeScript
+          -- "ts-ls",      -- JavaScript/TypeScript
           "rust_analyzer", -- Rust
           "cssls",         -- CSS
           "html",          -- HTML
