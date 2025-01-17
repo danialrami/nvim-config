@@ -12,6 +12,8 @@ Neovim configuration focused on development with LSP support, fuzzy finding, and
 - **telescope.nvim** - Fuzzy finder
 - **nvim-treesitter** - Syntax highlighting
 - **mason.nvim** - LSP package manager
+- **dressing.nvim** - Enhanced UI for inputs and selects
+- **ollama.nvim** - AI assistance integration
 
 ### LSP & Completion
 - **nvim-lspconfig** - LSP configuration
@@ -32,6 +34,10 @@ Neovim configuration focused on development with LSP support, fuzzy finding, and
 - `Ctrl + p` - Find files
 - `<leader>fg` - Live grep (find in files)
 - `<leader>fb` - Find buffers
+
+### Ollama
+- `<leader>oo` - Open Ollama prompt
+- `<leader>oG` - Generate code with Ollama
 
 ### LSP
 - `K` - Hover documentation
@@ -66,12 +72,12 @@ Currently configured for:
 ## Installation
 
 1. Clone this repository to your Neovim config directory:
-```bash
+```
 git clone https://github.com/danialrami/nvim-config.git ~/.config/nvim
 ```
 
 2. Start Neovim:
-```bash
+```
 nvim
 ```
 
@@ -83,3 +89,6 @@ Lazy.nvim will automatically install all plugins on first launch.
 - Git
 - A Nerd Font (for icons)
 - ripgrep (for telescope live grep)
+- curl (for ollama.nvim)
+- Ollama server running locally
+```
