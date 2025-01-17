@@ -91,4 +91,3 @@ Lazy.nvim will automatically install all plugins on first launch.
 - ripgrep (for telescope live grep)
 - curl (for ollama.nvim)
 - Ollama server running locally
-```
