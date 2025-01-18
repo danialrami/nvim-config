@@ -19,3 +19,8 @@ vim.opt.ignorecase = true     -- Ignore case in search patterns
 vim.opt.smartcase = true      -- Override ignorecase if search pattern contains uppercase
 vim.opt.cursorline = true     -- Highlight the current line
 
+-- Line wrapping
+vim.opt.wrap = true         -- enable line wrapping
+vim.opt.linebreak = true    -- wrap at word boundaries
+vim.opt.textwidth = 0       -- prevent hard wrapping
+vim.opt.wrapmargin = 0      -- prevent automatic line breaks
