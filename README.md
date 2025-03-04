@@ -1,93 +1,120 @@
 # Neovim Configuration
 
-Neovim configuration focused on development with LSP support, fuzzy finding, and a clean interface.
+Neovim configuration focused on development with fuzzy finding, LSP integration, SuperCollider audio programming, and AI-assisted coding.
 
 ## Plugin List
 
 ### Core Plugins
 - **lazy.nvim** - Plugin manager
-- **catppuccin** - Color scheme
+- **catppuccin** - Color scheme  
 - **lualine.nvim** - Status line
 - **neo-tree** - File explorer
 - **telescope.nvim** - Fuzzy finder
 - **nvim-treesitter** - Syntax highlighting
 - **mason.nvim** - LSP package manager
-- **dressing.nvim** - Enhanced UI for inputs and selects
+- **dressing.nvim** - Enhanced UI for inputs
 - **ollama.nvim** - AI assistance integration
+- **avante.nvim** - AI-powered code suggestions (Cursor IDE-style)
+- **scnvim** - SuperCollider IDE integration
 
 ### LSP & Completion
 - **nvim-lspconfig** - LSP configuration
-- **mason-lspconfig** - Bridge between mason and lspconfig
+- **mason-lspconfig** - Bridge between mason and lspconfig  
 - **nvim-cmp** - Completion engine
 - **LuaSnip** - Snippet engine
 
 ## Keybindings
 
-### General
+### General Navigation
 - `Space` - Leader key
 - `\` - Local leader key
+- `Ctrl + n` - Toggle Neo-tree file explorer
+- `Ctrl + p` - Telescope file finder
 
-### Neo-tree
-- `Ctrl + n` - Toggle file explorer
-
-### Telescope
-- `Ctrl + p` - Find files
-- `<leader>fg` - Live grep (find in files)
-- `<leader>fb` - Find buffers
-
-### Ollama
+### AI Assistance
 - `<leader>oo` - Open Ollama prompt
 - `<leader>oG` - Generate code with Ollama
+- `Ctrl + Space` - Trigger AI completions (avante.nvim)
 
-### LSP
+### SuperCollider (scnvim)
+- `<M-e>` - Send current line (insert/normal mode)
+- `<C-e>` - Send code block or visual selection
+- `<Enter>` - Toggle post window
+- `<M-CR>` - Toggle post window (insert mode)  
+- `<M-L>` - Clear post window
+- `<C-k>` - Show function signatures
+- `<F12>` - Hard stop SuperCollider
+- `<leader>st` - Start SuperCollider
+- `<leader>sk` - Recompile class library
+- `<F1>` - Server boot (s.boot)
+- `<F2>` - Show server meter (s.meter)
+
+### LSP & Diagnostics  
 - `K` - Hover documentation
 - `gd` - Go to definition
 - `gr` - Find references
 - `<leader>ca` - Code actions
-- `<leader>rn` - Rename symbol
-- `[d` - Previous diagnostic
-- `]d` - Next diagnostic
+- `<leader>rn` - Rename symbol  
+- `[d`/`]d` - Navigate diagnostics
 
-### Completion
-- `Ctrl + Space` - Trigger completion
-- `Ctrl + e` - Close completion window
-- `Tab` - Next completion item
-- `Shift + Tab` - Previous completion item
-- `Enter` - Confirm completion
-- `Ctrl + b` - Scroll docs up
-- `Ctrl + f` - Scroll docs down
+### Completion Engine
+- `Tab`/`Shift+Tab` - Cycle suggestions
+- `Ctrl + b/f` - Scroll docs
+- `Ctrl + e` - Close completion
+- `Enter` - Confirm selection
 
-## Language Servers
+## Language Support
 
-Currently configured for:
+### Configured Servers
 - Lua
-- Python
+- Python  
 - Rust
-- CSS
-- HTML
+- C/C++
+- HTML/CSS
 - JSON
 - Tailwind CSS
-- C/C++
+- **SuperCollider** (via scnvim integration)
 
-## Installation
+### Specialized Integration
+- **AI Autocomplete**: avante.nvim provides context-aware code suggestions through neural network models
+- **Audio Programming**: Full SuperCollider IDE features including:
+  - Post window in floating buffer
+  - Snippet generation for SC class methods
+  - Server status monitoring
+  - Interactive help system
 
-1. Clone this repository to your Neovim config directory:
+## Installation & Setup
+
+1. Clone config:
+
 ```
 git clone https://github.com/danialrami/nvim-config.git ~/.config/nvim
 ```
 
-2. Start Neovim:
+
+2. Install dependencies:
+
+```
+brew install supercollider
+cargo install avante-cli
+```
+
+3. Start Neovim:
+
 ```
 nvim
 ```
 
-Lazy.nvim will automatically install all plugins on first launch.
+4. Post-install steps:
+
+:SCNvimGenerateAssets  " Generate SuperCollider assets
+:checkhealth scnvim    " Verify scnvim installation
 
 ## Requirements
 
-- Neovim >= 0.9.0
-- Git
-- A Nerd Font (for icons)
-- ripgrep (for telescope live grep)
-- curl (for ollama.nvim)
-- Ollama server running locally
+- Neovim ≥ 0.9.0
+- Nerd Font (icons)
+- ripgrep (telescope)
+- Ollama local server
+- SuperCollider ≥ 3.12
+- Rust toolchain (avante.nvim)

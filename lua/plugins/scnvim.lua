@@ -5,3 +5,5 @@ return {
       require('scnvim').setup()
     end
   }  
+
+-- return {'davidgranstrom/scnvim'}  
