@@ -105,11 +105,6 @@ cargo install avante-cli
 nvim
 ```
 
-4. Post-install steps:
-
-:SCNvimGenerateAssets  " Generate SuperCollider assets
-:checkhealth scnvim    " Verify scnvim installation
-
 ## Requirements
 
 - Neovim ≥ 0.9.0
